@@ -1,74 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naruto x Sasuke</title>
-<link rel="stylesheet" href="style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Macondo&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Macondo&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+
 </head>
-<body id="ini">
-    <div id="some" style="display: none;">
-        <div id="Regras">
-            <img src="imagens/regras.png" class="pergaminho">
-    
-            <button onclick="fechar()">
-            <img src="imagens/x.png" class="x" onclick="fechar()">
-        </button>
+
+<body>
+
+    <div id="fundoJ">
+        <div id="vida" >
+            <div id="vidaN"></div>
+            <p onclick="reduzir()">Round 1</p>
+            <div id="vidaS"></div>
         </div>
 
-    </div>
- 
 
-    <div id="some1" style="display: none;">
-    <div id="creditos" >
-        <img src="imagens/creditos.png" class="pergaminho">
-        <button onclick="fechar()">
-            <img src="imagens/x.png" class="x" onclick="fecharC()">
-        </button>
-    </div>
-    </div>
-
-
-    <div id="inicial">
-        <img src="imagens/Sasukenaruto.gif">
-       
-        <div class="inicio">
-            <p class="titulo">Naruto: ultimate TI ninja</p>
-            <a href="index.html"> 
+        <div id="narutoG" style="display: none;">
+            <p class="titulo" >Naruto Vence!!</p>
+            <a href="Jogo.html">
                 <button>
-                    Começar
+                    Voltar ao inicio!
                 </button>
             </a>
-           
-            <button onclick="abrirC()">
-                Creditos
-
-            </button>
-            <button onclick="abrirR()">
-                Regras
-            </button>
-            
+            <br>
+            <img src="imagens/narutoGanha.gif" id="FinalNaruto">
+         
         </div>
-        
+        <div id="sasukeG" style="display: none;">
+            <p class="titulo" >Sasuke Vence!!</p>
+            <a href="Jogo.html">
+                <button>
+                    Voltar ao inicio!
+                </button>
+            </a>
+            <br>
+            <img src="imagens/sasukeganha2.gif" id="Finalsasuke">
+         
+        </div>
+
+
+        <div id="personagens">
+            <img src="imagens/naruto.webp" id="naruto" >
+            <img src="imagens/ataqueNaruto.gif" id="ataqueNaruto" style="display: none;" >
+            <img src="imagens/ataqueSasuke.gif" id="ataqueSasuke" style="display: none;" >
+            <img src="imagens/sasuke.gif" id="sasuke" >
+           
+        </div>
+
+
+
+        <div id="perguntas">
+            <span id="pergunta"></span>
+            <input type="text" name="" id="resposta">
+            <button onclick="verificar()">Verificar respostas</button>
+            <span id="erro" style="display: none;">Errou</span>
+        </div>
+
     </div>
+
 </body>
+
 </html>
+
 <script>
-    function abrirR() {
-        some.style.display = "block";
-    }  
-    function abrirC() {
-    some1.style.display = "block";
+    var r = 0;
+
+    var respostas = ['CPU', 'ULA', 'Registradores', 'RAM', 'ROM', 'EPROM', 'FLASH', 'Memória de Massa', 'DMA', 'CS', 'Adress Bus', 'Data Bus', 'I5', 'I7', 'Dual Core', 'Quad Core'];
+
+    var question = [
+        'Principal item de hardware do computador',
+        'Circuito digital que realiza operações de adição e booleana AND',
+        'Memória dentro da própria CPU que armazena n bits',
+        'Tecnologia que permite o acesso aos arquivos armazenados no computador',
+        'Tecnologia que permite o acesso aos arquivos armazenados no computador',
+        'Chip de memória de computador que mantém seus dados quando a energia é desligada',
+        'Esse tipo de memória não é volátil, ou seja, não precisa de energia para manter as informações armazenadas no chip',
+        'Também conhecida como memória auxiliar ou armazenamento de massa, tem como função armazenar grandes quantidades de informações',
+        'Característica dos computadores mais modernos que possibilita que determinados subsistemas de hardware dentro do computador acessem a memória do sistema, sem depender da CPU',
+        'Nome de uma linha de controle usada para selecionar um ou um conjunto de circuitos integrados dentre vários conectados ao mesmo barramento de computador',
+        'Arquitetura de barramento de computador usada para transferir dados entre dispositivos que são identificados pelo endereço de hardware',
+        'Sistema dentro de um computador ou dispositivo, consistindo em um conector ou conjunto de fios, que fornece transporte de dados.',
+        'Processador intel, frequência de 2.66 GHz, trabalhando com 4 núcleos(Quad Core) e possuindo um cache L3 de 8 MB , começou a ser fabricado em 2009.',
+        'Processador intel , possui 8 núcleos e 8 threads que consume 95W, começou a ser fabricado em 2008 ',
+        'Tipo de processador que comporta 2 núcleos de processamento de dados',
+        'Tipo de processador que comporta quatro núcleos de processamento de dados'
+    ];
+    pergunta.innerHTML = question[0];
+    var largura = 500;
+    var largura2 = 500;
+    var i = 0;
+    function verificar() {
+
+        r = resposta.value;
+
+        if (largura > 0 && largura2 > 0) {
+
+
+            if (r == respostas[i]) {
+
+                largura -= 31.25;
+                pergunta.innerHTML = question[i + 1];
+
+                vidaS.style.width = largura + "px";
+                i++;
+                
+                    Aparecer();
+                    setInterval(Sumir, 4500);
+                    clearInterval(Sumir);
+                    resposta.value = '';
+
+            } else {
+                AparecerS();
+                setInterval(sumirS,5300);
+                
+                erro.style.display = "block";
+                
+                largura2 -= 31.25;
+                vidaN.style.width = largura2 + "px";
+                setInterval(sumirerro,5300);
+            }
+
+
+        } else {
+            if (largura <= 0) {
+                narutoGanha();
+              
+                
+            } else if (largura2 <= 0) {
+                sasukeGanha();
+            } else {
+                alert("Empate!")
+            }
+        }
+
+
+
+
+
     }
-    function fechar() {
-        some.style.display = "none";
+
+    function Aparecer() {
+       ataqueNaruto.style.display = "block";
+        naruto.style.display = "none";
+        sasuke.style.display = "none";
     }
-    function fecharC() {
-        some1.style.display = "none";
+    function Sumir() {
+       ataqueNaruto.style.display = "none";
+       sasuke.style.display = "block";
+        naruto.style.display = "block";
     }
-  
+    function AparecerS() {
+       ataqueSasuke.style.display = "block";
+        naruto.style.display = "none";
+        sasuke.style.display = "none";
+    }
+    function sumirS() {
+       ataqueSasuke.style.display = "none";
+       sasuke.style.display = "block";
+        naruto.style.display = "block";
+    }
+    function sumirerro() {
+        erro.style.display = "none";
+    }
+
+    function narutoGanha() {
+        perguntas.style.display = "none";
+        personagens.style.display = "none";
+vida.style.display = "none";
+narutoG.style.display = "block"
+    }
+    function sasukeGanha(){
+        perguntas.style.display = "none";
+        personagens.style.display = "none";
+vida.style.display = "none";
+sasukeG.style.display = "block";
+    }
+
+
+
+
 </script>
