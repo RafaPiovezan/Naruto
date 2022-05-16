@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naruto x Sasuke</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Macondo&family=Permanent+Marker&display=swap" rel="stylesheet">
+</head>
+<body id="ini">
+    <div id="some" style="display: none;">
+        <div id="Regras">
+            <img src="imagens/regras.png" class="pergaminho">
+    
+            <button onclick="fechar()">
+            <img src="imagens/x.png" class="x" onclick="fechar()">
+        </button>
+        </div>
+
+    </div>
+ 
+
+    <div id="some1" style="display: none;">
+    <div id="creditos" >
+        <img src="imagens/creditos.png" class="pergaminho">
+        <button onclick="fechar()">
+            <img src="imagens/x.png" class="x" onclick="fecharC()">
+        </button>
+    </div>
+    </div>
+
+
+    <div id="inicial">
+        <img src="imagens/Sasukenaruto.gif">
+       
+        <div class="inicio">
+            <p class="titulo">Naruto: ultimate TI ninja</p>
+            <a href="index.html"> 
+                <button>
+                    Começar
+                </button>
+            </a>
+           
+            <button onclick="abrirC()">
+                Creditos
+
+            </button>
+            <button onclick="abrirR()">
+                Regras
+            </button>
+            
+        </div>
+        
+    </div>
+</body>
+</html>
+<script>
+    function abrirR() {
+        some.style.display = "block";
+    }  
+    function abrirC() {
+    some1.style.display = "block";
+    }
+    function fechar() {
+        some.style.display = "none";
+    }
+    function fecharC() {
+        some1.style.display = "none";
+    }
+  
+</script>

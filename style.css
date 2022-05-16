@@ -1,0 +1,236 @@
+body#ini{
+
+    overflow: hidden;
+}
+body{
+    margin:0;
+}
+
+#inicial{
+    background-image: url(imagens/wallpaper_1.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+#inicial img {
+  width: 100vw;
+  margin-top: -3vw;
+}
+#inicial .inicio .titulo{
+    font-family: 'Permanent Marker', cursive;
+    font-size:80px;
+    -webkit-text-stroke-width: 3px;
+/* Borda no texto */
+-webkit-text-stroke-color: #000;
+
+background-image: linear-gradient(to bottom, #ECE73F ,#EC6000);
+/* Segundo passo: apagar do fundo tudo que não estiver imediatamente atrás de texto */
+background-clip: text;
+-webkit-background-clip: text; /* Alguns navegadores precisam do prefixo */
+
+/* Terceiro passo: apagar o texto, deixando apenas o fundo atrás dele */
+-webkit-text-fill-color: transparent;
+
+/* Cor que contraste com o degradê, caso o navegador não suporte `background-clip: text` */
+color: black;
+
+}
+#inicial .inicio{
+    position: absolute;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+#inicial .inicio button{
+    padding: 1vw;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 35px;
+    margin-bottom: 2vw;
+    width: 22vw;
+    background-color:#e29734;
+    border: 4px solid #8d1d06;
+    -webkit-text-stroke-width: 2px;
+    /* Borda no texto */
+    -webkit-text-stroke-color: #000;
+    border-radius: 3px;
+
+color: #b42b10;
+text-decoration: none;
+    
+}
+#inicial .inicio button:hover {
+    
+    font-size:38px;
+    color: white;
+    background-color: #000;
+    margin-bottom: 2.5vw;
+
+    
+
+}
+
+
+#fundoJ{
+    background-image: url(imagens/fundo2.jpeg);
+    background-size: cover;
+  
+    position: relative;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+#personagens{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20vh;
+}
+#persongens img{
+    width: 40vw;
+
+   
+}
+#vidaN ,#vidaS{
+height: 25px;
+width: 500px;
+background-color:blue;
+}
+#vida p{
+    font-family: 'Permanent Marker', cursive;
+    font-size: 35px;
+    margin-top: 0vw;
+}
+#vida{
+    
+    display: flex;
+    justify-content: space-between;
+}
+#perguntas{
+    height: 10vw;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#perguntas span{
+    font-family: 'Source Code Pro', monospace;
+    font-size: 25px;
+}
+#perguntas input{
+    width: 40%;
+    height: 20px;
+    margin-top: 1vw;
+}
+#perguntas button{
+    width: 20vw;
+    height: 50px;
+    margin-top: 1vw;
+    font-family: 'Permanent Marker', cursive ;
+    font-size: 25px;
+
+}
+.botaoInicio{
+    width: 20vw;
+    height: 50px;
+    margin-top: 1vw;
+    font-family: 'Permanent Marker', cursive ;
+    font-size: 25px;
+}
+#erro{
+    color: red;
+    font-family: 'Permanent Marker', cursive ;
+}
+
+#ataqueNaruto{
+    width: 55vw;
+}
+#ataqueSasuke{
+    width: 80vw;
+    margin-top:-15vw;
+}
+#narutoG .titulo ,#sasukeG .titulo{
+    font-family: 'Permanent Marker', cursive;
+    font-size:80px;
+    -webkit-text-stroke-width: 3px;
+/* Borda no texto */
+-webkit-text-stroke-color: #000;
+
+background-image: linear-gradient(to bottom, #ECE73F ,#EC6000);
+/* Segundo passo: apagar do fundo tudo que não estiver imediatamente atrás de texto */
+background-clip: text;
+-webkit-background-clip: text; /* Alguns navegadores precisam do prefixo */
+
+/* Terceiro passo: apagar o texto, deixando apenas o fundo atrás dele */
+-webkit-text-fill-color: transparent;
+
+/* Cor que contraste com o degradê, caso o navegador não suporte `background-clip: text` */
+color: black;
+margin-top: 0vw;
+}
+
+#narutoG #FinalNaruto{
+    width: 27vw;
+    margin-top: 2vw;
+}
+#narutoG button , #sasukeG button{
+    width: 20vw;
+    height: 50px;
+    margin-top: -10vw;
+    font-family: 'Permanent Marker', cursive ;
+    font-size: 25px;
+    background-color: #e3d697;
+    color:#7e4244;
+    border-color:#7e4244;
+    outline-color: #7e4244;
+}
+#narutoG{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+#sasukeG{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}#sasukeG #Finalsasuke{
+    margin-top: 6vw;
+    margin-bottom: 4vw;
+    width: 27vw;
+}
+
+#Regras, #creditos{
+    background-color: rgba(0, 0, 0, 0.557);
+display: flex;
+justify-content: center;
+
+position: absolute;
+align-items: flex-start;
+width: 100vw;
+height: 100vh;
+z-index: 10000;
+
+}
+#Regras .pergaminho , #creditos .pergaminho{
+    width: 40vw;
+    margin-top: -5vw;
+}
+.x{
+width: 2vw;
+margin-top: 8vw;
+}
+#Regras button ,#creditos button{
+    background-color: rgba(0, 0, 0, 0);
+    border:none;
+}
+#ini{
+    position: relative;
+}
